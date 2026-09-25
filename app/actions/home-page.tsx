@@ -1,12 +1,11 @@
 // Delete this file and put your own home page in app/actions/controller.tsx
-import type { Handle, RemixNode } from 'remix/ui'
-import { css } from 'remix/ui'
+import type { Handle, RemixNode } from 'remix/ui';
+import { css } from 'remix/ui';
 
-import { Document } from './document.tsx'
-import { PromptButton } from './public/prompt-button.tsx'
+import { Document } from './document.tsx';
+import { PromptButton } from './public/prompt-button.tsx';
 
-const FONT_STACK =
-  "'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
+const FONT_STACK = "'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace";
 
 export function HomePage() {
   return () => (
@@ -60,7 +59,7 @@ export function HomePage() {
         </div>
       </main>
     </Document>
-  )
+  );
 }
 
 function HomeHead() {
@@ -68,12 +67,9 @@ function HomeHead() {
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
-      />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
     </>
-  )
+  );
 }
 
 function Masthead() {
@@ -105,7 +101,7 @@ function Masthead() {
       </p>
       <RemixWordmarkHero />
     </section>
-  )
+  );
 }
 
 function Columns() {
@@ -127,7 +123,7 @@ function Columns() {
       <GetStartedCard />
       <CodingWithAiCard />
     </section>
-  )
+  );
 }
 
 function GetStartedCard() {
@@ -149,15 +145,11 @@ function GetStartedCard() {
           <CardLink href="https://api.remix.run" icon={<AtomIcon />} label="Remix API" />
         </li>
         <li>
-          <CardLink
-            href="https://discord.gg/xwx7mMzVkA"
-            icon={<DiscordFaceIcon />}
-            label="Join Discord"
-          />
+          <CardLink href="https://discord.gg/xwx7mMzVkA" icon={<DiscordFaceIcon />} label="Join Discord" />
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
 function CodingWithAiCard() {
@@ -190,8 +182,7 @@ function CodingWithAiCard() {
             color: 'var(--text-primary)',
           })}
         >
-          Navigate to this project folder using your preferred AI-powered tool, and try copying any
-          of these prompts into the agent chat:
+          Navigate to this project folder using your preferred AI-powered tool, and try copying any of these prompts into the agent chat:
         </p>
         <PromptButton text="I want to build a simple headless Shopify store, what does Remix have available to help scaffold this?" />
         <PromptButton text="Add a sqlite database with a users table and scaffold a signup flow" />
@@ -200,12 +191,12 @@ function CodingWithAiCard() {
         <PromptButton text="Add compression middleware" />
       </div>
     </div>
-  )
+  );
 }
 
 function CardLink(handle: Handle<{ href: string; icon: RemixNode; label: string }>) {
   return () => {
-    let { href, icon, label } = handle.props
+    let { href, icon, label } = handle.props;
 
     return (
       <a
@@ -230,13 +221,13 @@ function CardLink(handle: Handle<{ href: string; icon: RemixNode; label: string 
         <IconSlot>{icon}</IconSlot>
         <span mix={css({ fontSize: '14px', lineHeight: 1.5, whiteSpace: 'nowrap' })}>{label}</span>
       </a>
-    )
-  }
+    );
+  };
 }
 
 function IconSlot(handle: Handle<{ children: RemixNode; rotated?: boolean }>) {
   return () => {
-    let { children, rotated = false } = handle.props
+    let { children, rotated = false } = handle.props;
 
     return (
       <span
@@ -257,8 +248,8 @@ function IconSlot(handle: Handle<{ children: RemixNode; rotated?: boolean }>) {
       >
         {children}
       </span>
-    )
-  }
+    );
+  };
 }
 
 function Footer() {
@@ -338,7 +329,7 @@ function Footer() {
         <p>&copy;2026 SHOPIFY, INC.</p>
       </div>
     </footer>
-  )
+  );
 }
 
 const cardStyle = css({
@@ -349,7 +340,7 @@ const cardStyle = css({
   flexDirection: 'column',
   alignItems: 'center',
   gap: '32px',
-})
+});
 
 const cardHeaderStyle = css({
   margin: 0,
@@ -363,7 +354,7 @@ const cardHeaderStyle = css({
   textTransform: 'uppercase',
   letterSpacing: '0.1em',
   color: 'var(--text-primary)',
-})
+});
 
 // ----- SVG icons -----
 // Inline so the page is fully self-contained with no external icon assets.
@@ -378,7 +369,7 @@ function AtomIcon() {
         stroke-linecap="round"
       />
     </svg>
-  )
+  );
 }
 
 function DiscordFaceIcon() {
@@ -390,7 +381,7 @@ function DiscordFaceIcon() {
         stroke-width="1.5"
       />
     </svg>
-  )
+  );
 }
 
 function GitHubIcon() {
@@ -403,7 +394,7 @@ function GitHubIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 function XIcon() {
@@ -414,7 +405,7 @@ function XIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 function YouTubeIcon() {
@@ -425,7 +416,7 @@ function YouTubeIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 function DiscordIcon() {
@@ -437,7 +428,7 @@ function DiscordIcon() {
         stroke-width="1.5"
       />
     </svg>
-  )
+  );
 }
 
 function FooterWordmark() {
@@ -464,7 +455,7 @@ function FooterWordmark() {
         <path d="M70.4294 0.124146L69.319 4.33313H48.6296L48.2175 5.9054H48.2233L48.2224 5.90833H68.8796L67.7692 10.1427H47.0856L47.0603 10.2726C46.8284 11.0727 47.8351 11.7177 49.3063 11.7179H67.3308L66.194 15.9269H43.1608C38.3069 15.9267 34.95 13.7581 35.6726 11.0988L37.2995 4.97864C37.3359 4.84353 37.384 4.71053 37.4392 4.57825L37.4372 4.57922L38.6042 0.124146H70.4294Z" />
       </svg>
     </span>
-  )
+  );
 }
 
 function RemixWordmarkHero() {
@@ -485,19 +476,13 @@ function RemixWordmarkHero() {
     >
       <path d="M53.1347 52.3526H37.3303L32.0532 72.1341H47.8519L53.1347 52.3526Z" fill="#FFDF5F" />
       <path d="M44.2314 26.4861L39.1011 45.7148H54.9079L60.0431 26.4861H44.2314Z" fill="#FFDF5F" />
-      <path
-        d="M61.9637 19.2947L67.0981 0.0684052H51.2799L46.1504 19.2947H61.9637Z"
-        fill="#FFDF5F"
-      />
+      <path d="M61.9637 19.2947L67.0981 0.0684052H51.2799L46.1504 19.2947H61.9637Z" fill="#FFDF5F" />
       <path d="M37.3365 52.3526H21.5321L16.2559 72.1341H32.0537L37.3365 52.3526Z" fill="#80E464" />
       <path d="M46.1656 19.2947L51.3 0.0684052H35.4818L30.3523 19.2947H46.1656Z" fill="#80E464" />
       <path d="M28.4333 26.4861L23.303 45.7148H39.1098L44.245 26.4861H28.4333Z" fill="#80E464" />
       <path d="M21.54 52.3526H5.73559L0.458496 72.1341H16.2572L21.54 52.3526Z" fill="#20AAFF" />
       <path d="M12.6359 26.4861L7.50635 45.7148H23.3124L28.4476 26.4861H12.6359Z" fill="#20AAFF" />
-      <path
-        d="M30.3683 19.2947L35.5035 0.0684052H19.6844L14.5549 19.2947H30.3683Z"
-        fill="#20AAFF"
-      />
+      <path d="M30.3683 19.2947L35.5035 0.0684052H19.6844L14.5549 19.2947H30.3683Z" fill="#20AAFF" />
       <path d="M68.7538 52.3526H52.9495L47.6724 72.1341H63.471L68.7538 52.3526Z" fill="#FF65DB" />
       <path d="M59.8513 26.4861L54.7209 45.7148H70.527L75.6622 26.4861H59.8513Z" fill="#FF65DB" />
       <path d="M77.583 19.2947L82.7174 0.0684052H66.8991L61.7688 19.2947H77.583Z" fill="#FF65DB" />
@@ -510,10 +495,7 @@ function RemixWordmarkHero() {
         d="M216.245 0.0681458L216.243 0.0700989V0.072052C235.424 0.072052 248.674 8.67951 245.842 19.2986L243.923 26.489C241.089 37.1082 223.245 45.7166 204.064 45.7166H202.103L242.393 72.1355H177.706L145.137 46.9959C143.833 46.1598 142.319 45.7156 140.772 45.7156H86.3262L91.4561 26.4871H186.821C190.406 26.4871 193.744 24.877 194.274 22.8914H194.276C194.806 20.9057 192.328 19.2958 188.741 19.2957H93.375L98.5039 0.0681458H216.245ZM131.582 52.3523C133.389 52.3523 134.705 54.0738 134.237 55.8269L129.888 72.1336H79.2783L84.5557 52.3523H131.582Z"
         fill="currentColor"
       />
-      <path
-        d="M597.362 72.4945L616.641 0.550888H667.543L648.146 72.4945H597.362Z"
-        fill="currentColor"
-      />
+      <path d="M597.362 72.4945L616.641 0.550888H667.543L648.146 72.4945H597.362Z" fill="currentColor" />
       <path
         d="M405.385 0.550934H570.197C592.298 0.550934 607.58 10.4256 604.288 22.6513L590.887 72.4946H540.103L547.039 46.75L551.036 32.0557L552.564 26.413C553.504 22.7688 548.92 19.7124 542.219 19.7124H527.76C527.642 20.6528 527.642 21.5933 527.29 22.6513L514.006 72.4946H463.105L470.04 46.75L474.037 32.0557L475.566 26.413C476.506 22.7688 471.921 19.7124 465.221 19.7124H451.114L436.89 72.4946H386.106L405.385 0.550934Z"
         fill="currentColor"
@@ -531,5 +513,5 @@ function RemixWordmarkHero() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
