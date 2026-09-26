@@ -1,5 +1,7 @@
 import type { Handle } from 'remix/ui';
 
+import button from 'remix/ui/button';
+
 import type { Task } from './data.ts';
 
 import { routes } from '../../routes.ts';
@@ -21,7 +23,9 @@ export function EditTaskPage(handle: Handle<Props>) {
         </main>
         <form action={routes.tasks.destroy.href({ id: task.id! })} method="POST">
           <input type="hidden" name="_method" value="DELETE" />
-          <button type="submit">Delete</button>
+          <button type="submit" mix={button({ tone: 'ghost' })}>
+            Delete
+          </button>
         </form>
       </Document>
     );
