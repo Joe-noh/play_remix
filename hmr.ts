@@ -1,8 +1,7 @@
 import * as http from 'node:http';
-
 import { createFetchProxy } from 'remix/fetch-proxy';
-import { createHmrReadyFetch, run } from 'remix/node-hmr';
 import { createRequestListener } from 'remix/node-fetch-server';
+import { createHmrReadyFetch, run } from 'remix/node-hmr';
 
 const hmrProxyPort = process.env.PORT ? Number.parseInt(process.env.PORT, 10) : 44100;
 const hmrEventPort = process.env.HMR_PORT ? Number.parseInt(process.env.HMR_PORT, 10) : hmrProxyPort + 1;

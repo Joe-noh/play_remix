@@ -1,5 +1,6 @@
 // Delete this file and put your own home page in app/actions/controller.tsx
 import type { Handle, RemixNode } from 'remix/ui';
+
 import { css } from 'remix/ui';
 
 import { Document } from './document.tsx';
