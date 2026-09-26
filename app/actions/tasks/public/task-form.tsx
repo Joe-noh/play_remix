@@ -62,7 +62,7 @@ export const TaskForm = clientEntry(import.meta.url, function TaskForm(handle: H
         </div>
         <div>
           <label>
-            <input defaultChecked={task.done} value="true" type="checkbox" name="done" mix={checkbox()}></input>
+            <input defaultChecked={task.done === 1} value={1} type="checkbox" name="done" mix={checkbox()}></input>
             Done
           </label>
         </div>

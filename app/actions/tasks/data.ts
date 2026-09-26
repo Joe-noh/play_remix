@@ -1,39 +1,23 @@
-export type Task = {
-  id?: number;
-  body: string;
-  done: boolean;
-};
+import { Database } from 'remix/data-table';
 
-let tasks: Task[] = [
-  {
-    id: 1,
-    body: 'Buy some more milk.',
-    done: false,
-  },
-  {
-    id: 2,
-    body: 'Read 10 pages of a book.',
-    done: true,
-  },
-  {
-    id: 3,
-    body: 'Fill up the gas tank.',
-    done: false,
-  },
-];
+import { tasksTable, type Task } from '../../data/schema.ts';
 
-export async function listTasks() {
-  return tasks;
+export async function listTasks(db: Database) {
+  return await db.findMany(tasksTable, { orderBy: ['id', 'asc'] });
 }
 
-export async function getTask(id: number) {
-  return tasks.find((task) => task.id === id);
+export async function getTask(db: Database, id: number) {
+  return await db.findOne(tasksTable, { where: { id } });
 }
 
-export async function updateTask(id: number, _values: Omit<Task, 'id'>) {
-  const task = await getTask(id);
+export async function createTask(db: Database, params: Omit<Task, 'id'>) {
+  return await db.create(tasksTable, params);
+}
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+export async function updateTask(db: Database, id: number, params: Omit<Task, 'id'>) {
+  return await db.update(tasksTable, id, params);
+}
 
-  return task;
+export async function destroyTask(db: Database, id: number) {
+  return await db.delete(tasksTable, id);
 }

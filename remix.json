@@ -11,5 +11,18 @@
     "allowFiles": ["app/routes.ts", "app/**/public/**"],
     "allowPackages": ["remix"],
     "denyFiles": ["app/**/*.test.*"]
+  },
+  "db": {
+    "adapter": {
+      "type": "sqlite",
+      "filename": {
+        "env": "DATABASE_URL",
+        "default": "./db/tasklist.sqlite"
+      },
+      "foreignKeys": true
+    },
+    "migrations": {
+      "directory": "./db/migrations"
+    }
   }
 }
