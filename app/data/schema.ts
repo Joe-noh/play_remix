@@ -1,4 +1,4 @@
-import { column as c, table, type TableRow } from 'remix/data-table';
+import { column as c, table } from 'remix/data-table';
 
 export const tasksTable = table({
   name: 'tasks',
@@ -9,4 +9,4 @@ export const tasksTable = table({
   },
 });
 
-export type Task = TableRow<typeof tasksTable>;
+export type TasksTable = typeof tasksTable;

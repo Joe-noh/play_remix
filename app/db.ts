@@ -15,5 +15,7 @@ const filename = process.env.NODE_ENV === 'test' ? ':memory:' : (process.env[f.e
 export const db = createSqliteDatabase({ filename, foreignKeys: adapter.foreignKeys });
 
 export function loadAppMigrations() {
-  return loadMigrations(path.join(import.meta.dirname, '..', migrations?.directory!));
+  if (migrations) {
+    return loadMigrations(path.join(import.meta.dirname, '..', migrations.directory));
+  }
 }

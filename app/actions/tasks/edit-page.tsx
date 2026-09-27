@@ -1,8 +1,7 @@
 import type { Handle } from 'remix/ui';
+import type { Task } from 'schema';
 
 import button from 'remix/ui/button';
-
-import type { Task } from './data.ts';
 
 import { routes } from '../../routes.ts';
 import { Document } from '../document.tsx';
