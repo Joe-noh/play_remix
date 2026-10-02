@@ -1,6 +1,6 @@
 import { createAssetServer } from 'remix/assets';
 import { loadConfig } from 'remix/cli';
-import { uiHmr } from 'remix/ui-hmr/assets';
+import { componentHmr } from 'remix/component-hmr/assets';
 
 const nodeEnv = process.env.NODE_ENV ?? 'development';
 const isDevelopment = nodeEnv === 'development';
@@ -22,7 +22,7 @@ export const assets = createAssetServer({
       }
     : undefined,
   scripts: {
-    loaders: isHmr ? [uiHmr()] : undefined,
+    loaders: isHmr ? [componentHmr()] : undefined,
   },
 });
 

@@ -9,7 +9,7 @@
       "packages": "packages"
     },
     "allowFiles": ["app/routes.ts", "app/**/public/**"],
-    "allowPackages": ["remix"],
+    "allowPackages": ["@remix-run/ui", "remix"],
     "denyFiles": ["app/**/*.test.*"]
   },
   "db": {

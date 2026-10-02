@@ -1,4 +1,4 @@
-import type { Handle } from 'remix/ui';
+import type { Handle } from 'remix/component';
 import type { NewTask } from 'schema';
 
 import { Document } from '../document.tsx';

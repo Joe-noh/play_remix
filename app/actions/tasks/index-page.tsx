@@ -1,4 +1,4 @@
-import type { Handle } from 'remix/ui';
+import type { Handle } from 'remix/component';
 import type { Task } from 'schema';
 
 import { routes } from '../../routes.ts';

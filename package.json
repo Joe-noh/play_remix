@@ -13,7 +13,8 @@
     "fmt:check": "oxfmt --check"
   },
   "dependencies": {
-    "remix": "^3.0.0-rc.3"
+    "@remix-run/ui": "^0.11.0",
+    "remix": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "latest",

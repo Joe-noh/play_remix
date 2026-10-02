@@ -1,10 +1,10 @@
-import type { Dispatched, Handle } from 'remix/ui';
+import type { Dispatched, Handle } from 'remix/component';
 import type { NewTask, Task } from 'schema';
 
-import { clientEntry, on, navigate } from 'remix/ui';
-import button from 'remix/ui/button';
-import checkbox from 'remix/ui/checkbox';
-import input from 'remix/ui/input';
+import { clientEntry, on, navigate } from 'remix/component';
+import button from '@remix-run/ui/button';
+import checkbox from '@remix-run/ui/checkbox';
+import input from '@remix-run/ui/input';
 
 import { routes } from '../../../routes.ts';
 
